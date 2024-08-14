@@ -1,23 +1,13 @@
-import React, {useState, useEffect, useLayoutEffect, useRef} from 'react'
+import React, {useState, useCallback} from 'react'
 
 function App() {
-  const [data, setData] = useState('')
-  const inputRef = useRef(null)
-
-  useEffect(() => {
-    console.log('Effect')
-  }, [])
-
-  useLayoutEffect(() => {
-    console.log(inputRef.current.value)
-  }, []) 
+  const [name, setName] = useState('')
 
   return (
     <div>
       <h3>htmllessons (JS Version)</h3>
       <input 
-        ref={inputRef}
-        value='Max'
+        defaultValue='Max'
         placeholder='Enter name' 
       />
     </div>
