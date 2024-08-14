@@ -1,8 +1,15 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import './App.css';
 
+interface IData {
+  name: string
+  phone: string
+  postcode: number
+}
+
 const AppTs: FC = () => {
-  return <div>TypeScript Version</div>
+  const [data, setData] = useState<IData>({} as IData)
+  return <div style={{marginTop: 100}}>TypeScript Version</div>
 }
 
 export default AppTs;

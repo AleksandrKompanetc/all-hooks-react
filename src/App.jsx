@@ -1,20 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useLayoutEffect, useRef} from 'react'
 
 function App() {
-  const [data, setData] = useState('');
+  const [data, setData] = useState('')
+  const inputRef = useRef(null)
+
+  useEffect(() => {
+    console.log('Effect')
+  }, [])
+
+  useLayoutEffect(() => {
+    console.log(inputRef.current.value)
+  }, []) 
+
   return (
     <div>
       <h3>htmllessons (JS Version)</h3>
       <input 
-        value={data.name} 
-        onChange={e => setData({...data, name: e.target.value})} 
-        defaultValue='Max' 
+        ref={inputRef}
+        value='Max'
         placeholder='Enter name' 
       />
-      <div>
-        <b>Value:</b>
-        {data.name}
-      </div>
     </div>
   )
 }
