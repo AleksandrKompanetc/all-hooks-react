@@ -1,5 +1,6 @@
-import React, { FC, useState, useRef } from 'react';
+import React, { FC, useState, useContext } from 'react';
 import './App.css';
+import { useAuth } from './AuthContext';
 
 interface IData {
   name: string
@@ -8,8 +9,8 @@ interface IData {
 }
 
 const AppTs: FC = () => {
-  const [data, setData] = useState<IData>({} as IData)
-  return <div style={{marginTop: 100}}>TypeScript Version</div>
+  const {isAuth} = useAuth()
+  return <div style={{marginTop: 100}}>TypeScript Version{isAuth && 'Autorized'}</div>
 }
 
 export default AppTs;
