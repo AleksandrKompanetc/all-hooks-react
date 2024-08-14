@@ -1,13 +1,14 @@
 import React, {useState, useCallback} from 'react'
+import { useName } from './useName';
 
 function App() {
-  const [name, setName] = useState('')
+  const [name, setName] = useName()
 
   return (
     <div>
       <h3>htmllessons (JS Version)</h3>
       <input 
-        defaultValue='Max'
+        value={name}
         placeholder='Enter name' 
       />
     </div>
